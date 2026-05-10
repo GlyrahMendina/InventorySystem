@@ -1,0 +1,187 @@
+﻿<Window x:Class="InventorySystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ducut Mart Login"
+        Height="600"
+        Width="1000"
+        WindowState="Maximized"
+        ResizeMode="NoResize"
+        WindowStyle="SingleBorderWindow"
+        Background="#FF6A1A">
+
+    <Grid>
+        <Border Width="430"
+                Height="560"
+                Background="White"
+                CornerRadius="15"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Padding="40">
+
+            <StackPanel>
+
+                <!-- LOGO -->
+                <Image Source="/ducutLogo.png"
+                       Width="240"
+                       Height="130"
+                       Stretch="Uniform"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,5"/>
+
+                <TextBlock Text="Welcome back! Please login to continue"
+                           FontSize="14"
+                           FontWeight="Bold"
+                           Foreground="#555"
+                           HorizontalAlignment="Center"
+                           Margin="0,10,0,35"/>
+
+                <!-- USERNAME -->
+                <TextBlock Text="Username"
+                           FontSize="12"
+                           FontWeight="SemiBold"
+                           Margin="0,0,0,8"/>
+
+                <Border BorderBrush="#DADADA"
+                        BorderThickness="1"
+                        CornerRadius="7"
+                        Height="45"
+                        Margin="0,0,0,18">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="✉"
+                                   Grid.Column="0"
+                                   FontSize="17"
+                                   Foreground="#888"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"/>
+
+                        <TextBox x:Name="txtEmail"
+                                 Grid.Column="1"
+                                 BorderThickness="0"
+                                 FontSize="14"
+                                 FontWeight="SemiBold"
+                                 VerticalContentAlignment="Center"
+                                 Foreground="#555"
+                                 Background="Transparent"
+                                 Padding="0"
+                                 Text=""/>
+                    </Grid>
+                </Border>
+
+                <!-- PASSWORD -->
+                <TextBlock Text="Password"
+                   FontSize="12"
+                   FontWeight="SemiBold"
+                   Margin="0,0,0,8"/>
+
+                <Border BorderBrush="#DADADA"
+                    BorderThickness="1"
+                    CornerRadius="7"
+                    Height="45"
+                    Margin="0,0,0,20">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- LOCK ICON -->
+                        <TextBlock Text="🔒"
+                               Grid.Column="0"
+                               FontSize="15"
+                               Foreground="#888"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"/>
+
+                        <!-- PASSWORD BOX -->
+                        <PasswordBox x:Name="txtPassword"
+                                 Grid.Column="1"
+                                 BorderThickness="0"
+                                 FontSize="14"
+                                 FontWeight="SemiBold"
+                                 VerticalContentAlignment="Center"
+                                 Foreground="#555"
+                                 Background="Transparent"
+                                 PasswordChanged="txtPassword_PasswordChanged"/>
+
+                        <!-- SHOW PASSWORD TEXTBOX -->
+                        <TextBox x:Name="txtVisiblePassword"
+                                 Grid.Column="1"
+                                 BorderThickness="0"
+                                 FontSize="14"
+                                 FontWeight="SemiBold"
+                                 VerticalContentAlignment="Center"
+                                 Foreground="#555"
+                                 Background="Transparent"
+                                 Visibility="Collapsed"
+                                 TextChanged="txtVisiblePassword_TextChanged"/>
+
+                        <!-- EYE BUTTON -->
+                        <Button x:Name="btnShowPassword"
+                                Grid.Column="2"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Cursor="Hand"
+                                Click="btnShowPassword_Click">
+
+                            <Grid Width="18"
+                                Height="18">
+
+                                <!-- EYE OUTLINE -->
+                                <Ellipse Stroke="#777"
+                                 StrokeThickness="1.5"
+                                 Width="16"
+                                 Height="10"
+                                 VerticalAlignment="Center"
+                                 HorizontalAlignment="Center"/>
+
+                                <!-- EYE PUPIL -->
+                                <Ellipse Fill="#777"
+                                 Width="4"
+                                 Height="4"
+                                 VerticalAlignment="Center"
+                                 HorizontalAlignment="Center"/>
+
+                                <!-- SLASH -->
+                                <Line x:Name="eyeSlash"
+                                  X1="2"
+                                  Y1="16"
+                                  X2="16"
+                                  Y2="2"
+                                  Stroke="#777"
+                                  StrokeThickness="2"
+                                  Visibility="Collapsed"/>
+                            </Grid>
+                        </Button>
+                    </Grid>
+                </Border>
+
+                <!-- SIGN IN BUTTON -->
+                <Button Content="Sign In"
+                        Height="55"
+                        Background="#FF6A1A"
+                        Foreground="White"
+                        FontSize="18"
+                        FontWeight="Bold"
+                        BorderThickness="0"
+                        Cursor="Hand"
+                        Click="btnSignIn_Click">
+
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

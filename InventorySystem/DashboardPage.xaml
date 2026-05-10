@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="InventorySystem.DashboardPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Margin="45,35,45,35">
+        <TextBlock Text="Dashboard"
+                   Foreground="#FF6A1A"
+                   FontSize="40"
+                   FontWeight="Bold"/>
+
+        <UniformGrid Columns="2"
+                     Rows="2"
+                     Margin="0,90,0,0">
+
+            <Border BorderBrush="#999" BorderThickness="1" CornerRadius="8" Margin="10" Padding="20">
+                <StackPanel>
+                    <TextBlock Text="Total Products" FontSize="24" FontWeight="Bold"/>
+                    <TextBlock x:Name="txtTotalProducts" Text="0" FontSize="60" FontWeight="Bold" Foreground="#FF3131"/>
+                </StackPanel>
+            </Border>
+
+            <Border BorderBrush="#999" BorderThickness="1" CornerRadius="8" Margin="10" Padding="20">
+                <StackPanel>
+                    <TextBlock Text="Low Stock Items" FontSize="24" FontWeight="Bold"/>
+                    <TextBlock x:Name="txtLowStock" Text="0" FontSize="60" FontWeight="Bold" Foreground="#F47B20"/>
+                </StackPanel>
+            </Border>
+
+            <Border BorderBrush="#999" BorderThickness="1" CornerRadius="8" Margin="10" Padding="20">
+                <StackPanel>
+                    <TextBlock Text="Total Sales" FontSize="24" FontWeight="Bold"/>
+                    <TextBlock x:Name="txtTotalSales" Text="Php 0.00" FontSize="42" FontWeight="Bold" Foreground="#38A145"/>
+                </StackPanel>
+            </Border>
+
+            <Border BorderBrush="#999" BorderThickness="1" CornerRadius="8" Margin="10" Padding="20">
+                <StackPanel>
+                    <TextBlock Text="Transactions Today" FontSize="24" FontWeight="Bold"/>
+                    <TextBlock x:Name="txtTransactionsToday" Text="0" FontSize="60" FontWeight="Bold" Foreground="#555"/>
+                </StackPanel>
+            </Border>
+
+        </UniformGrid>
+    </Grid>
+</UserControl>

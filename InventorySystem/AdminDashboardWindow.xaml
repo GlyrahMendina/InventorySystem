@@ -1,0 +1,141 @@
+﻿<Window x:Class="InventorySystem.AdminDashboardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Admin Dashboard"
+        Height="720"
+        Width="1200"
+        WindowState="Maximized"
+        ResizeMode="NoResize"
+        WindowStyle="SingleBorderWindow"
+        Background="White">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- SIDEBAR -->
+        <Border Grid.Column="0"
+                Background="#FF6A1A">
+
+            <Grid Margin="12">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="70"/>
+                </Grid.RowDefinitions>
+
+                <!-- LOGO -->
+                <Image Source="/ducutLogo.png"
+                       Height="120"
+                       Stretch="Uniform"
+                       VerticalAlignment="Top"/>
+
+                <!-- NAVIGATION BUTTONS -->
+                <StackPanel Grid.Row="1"
+                            Margin="0,20,0,0">
+
+                    <Button Content="Dashboard"
+                            Height="45"
+                            Margin="0,0,0,15"
+                            Background="White"
+                            Foreground="#555"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Click="btnDashboard_Click"/>
+
+                    <Button Content="Inventory"
+                            Height="45"
+                            Margin="0,0,0,15"
+                            Background="White"
+                            Foreground="#555"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Click="btnInventory_Click"/>
+
+                    <Button Content="Add Cashier"
+                            Height="45"
+                            Margin="0,0,0,15"
+                            Background="White"
+                            Foreground="#555"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Click="btnAddCashierPage_Click"/>
+
+                    <Button Content="General Report"
+                            Height="45"
+                            Background="White"
+                            Foreground="#555"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Click="btnGeneralReport_Click"/>
+                </StackPanel>
+
+                <!-- LOGOUT -->
+                <Button Grid.Row="2"
+                        Content="Logout"
+                        Height="45"
+                        Background="White"
+                        Foreground="#555"
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Click="btnLogout_Click"/>
+            </Grid>
+        </Border>
+
+        <!-- MAIN AREA -->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="110"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- HEADER -->
+            <Border Grid.Row="0"
+                    Background="White"
+                    BorderBrush="#D0D0D0"
+                    BorderThickness="0,0,0,1">
+
+                <Grid>
+                    <StackPanel VerticalAlignment="Center"
+                        Margin="35,0,0,0">
+
+                        <TextBlock x:Name="txtWelcome"
+                           Text="Welcome Back!"
+                           Foreground="#FF6A1A"
+                           FontSize="34"
+                           FontWeight="Bold"/>
+
+                        <TextBlock x:Name="txtDashboardRole"
+                           Text="Admin Dashboard"
+                           Foreground="#555"
+                           FontSize="18"
+                           FontWeight="SemiBold"
+                           Margin="2,5,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Margin="0,0,35,0">
+
+                        <TextBlock Text="Current Date"
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Foreground="#555"
+                                   HorizontalAlignment="Right"/>
+
+                        <TextBlock x:Name="txtCurrentDate"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   Foreground="#555"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- DYNAMIC PAGE CONTENT -->
+            <ContentControl x:Name="MainContent"
+                            Grid.Row="1"/>
+        </Grid>
+    </Grid>
+</Window>
